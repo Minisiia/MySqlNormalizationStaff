@@ -5,12 +5,11 @@
 Таблица personalInformation переименована в staffContactInformation, столбец city объединился с adress
 */
 
-DROP DATABASE HumanResourcesDepartment;
 CREATE DATABASE HumanResourcesDepartment;
 USE HumanResourcesDepartment;
 
 CREATE TABLE departments(
-	id INT AUTO_INCREMENT NOT NULL,
+    id INT AUTO_INCREMENT NOT NULL,
     name VARCHAR(50),
     head_lname VARCHAR(20),
     head_fname VARCHAR(20),
@@ -47,8 +46,8 @@ INSERT INTO education
 VALUES ('Среднее'),('Средне специальное'),('Среднее (неполное)'),('Высшее');
 
 CREATE TABLE staff(
-	id int auto_increment not null,
-	last_name  VARCHAR(20),
+    id int auto_increment not null,
+    last_name  VARCHAR(20),
     first_name VARCHAR(20),
     patronymic VARCHAR(20),
     department_id INT,
@@ -98,8 +97,8 @@ ALTER TABLE staff
 ADD CONSTRAINT FK_staff_staffContactInformation FOREIGN KEY (contacts_id) REFERENCES staffContactInformation(id);
 
 CREATE TABLE personalInformation(
-	id INT AUTO_INCREMENT NOT NULL,
-	birth_date DATE,
+    id INT AUTO_INCREMENT NOT NULL,
+    birth_date DATE,
     passport VARCHAR(50),
     inn VARCHAR(50),
     adress VARCHAR(100),
